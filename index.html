@@ -1,0 +1,3571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Email Automation Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 1%;
+            color: #1a202c;
+        }
+
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3% 1%;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 1%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f7fafc;
+            border-bottom: 2px solid #e2e8f0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab {
+            flex: 1;
+            min-width: 80px;
+            padding: 3% 1%;
+            background: none;
+            border: none;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+
+        .content {
+            padding: 1%;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 15px;
+            color: #667eea;
+            margin: 2% 1% 1% 1%;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 13px;
+            color: #2d3748;
+            margin: 2% 1% 1% 1%;
+            font-weight: 600;
+        }
+
+        p, li {
+            font-size: 11px;
+            line-height: 1.6;
+            margin: 1%;
+            color: #4a5568;
+        }
+
+        ul, ol {
+            margin-left: 4%;
+        }
+
+        li {
+            margin-bottom: 1%;
+        }
+
+        .card {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 2%;
+            margin: 2% 1%;
+            border-radius: 6px;
+        }
+
+        .step {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2%;
+            margin: 2% 1%;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .step h4 {
+            font-size: 12px;
+            color: #2d3748;
+            margin: 1% 1% 2% 1%;
+            font-weight: 600;
+        }
+
+        .tip {
+            background: #edf2f7;
+            border-left: 4px solid #48bb78;
+            padding: 2%;
+            margin: 2% 1%;
+            border-radius: 6px;
+        }
+
+        .tip strong {
+            color: #48bb78;
+            font-size: 11px;
+        }
+
+        .warning {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 2%;
+            margin: 2% 1%;
+            border-radius: 6px;
+        }
+
+        .warning strong {
+            color: #fc8181;
+            font-size: 11px;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2%;
+            margin: 2% 1%;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3%;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tool-card:active {
+            transform: scale(0.95);
+        }
+
+        .tool-card h4 {
+            font-size: 12px;
+            margin-bottom: 1%;
+        }
+
+        .tool-card p {
+            font-size: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 3% 1%;
+            font-size: 10px;
+        }
+
+        /* Tutorial specific styles */
+        .tutorial-step {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 3%;
+            margin: 3% 1%;
+            position: relative;
+        }
+
+        .tutorial-number {
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2% 4%;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .screenshot-box {
+            background: #2d3748;
+            border: 3px solid #4a5568;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1%;
+            color: #68d391;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            position: relative;
+        }
+
+        .screenshot-box::before {
+            content: "📸 Screenshot Simulation";
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background: #2d3748;
+            padding: 0 8px;
+            font-size: 9px;
+            color: #68d391;
+        }
+
+        .code-example {
+            background: #1a202c;
+            color: #68d391;
+            padding: 3%;
+            border-radius: 8px;
+            margin: 2% 1%;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #667eea;
+        }
+
+        .checklist {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2%;
+            margin: 2% 1%;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 2% 1%;
+            border-bottom: 1px solid #f7fafc;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkbox {
+            min-width: 18px;
+            height: 18px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            margin-right: 3%;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .checkbox.checked {
+            background: #667eea;
+        }
+
+        .checkbox.checked::after {
+            content: "✓";
+            color: white;
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .template-box {
+            background: linear-gradient(135deg, #faf5ff 0%, #e9d8fd 100%);
+            border: 2px dashed #9f7aea;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1%;
+        }
+
+        .template-box h4 {
+            color: #6b46c1;
+            font-size: 12px;
+            margin-bottom: 2%;
+        }
+
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 2% 4%;
+            border-radius: 6px;
+            font-size: 10px;
+            cursor: pointer;
+            margin-top: 2%;
+            transition: all 0.3s;
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+            background: #764ba2;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2% 1%;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+
+        .accordion {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin: 2% 1%;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: #f7fafc;
+            padding: 3%;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .accordion-header:active {
+            background: #edf2f7;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 3%;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+            padding: 3%;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1% 3%;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: bold;
+            margin: 1%;
+        }
+
+        .badge.easy { background: #48bb78; }
+        .badge.medium { background: #ed8936; }
+        .badge.hard { background: #f56565; }
+
+        /* Beginner guide specific styles */
+        .glossary-item {
+            background: white;
+            border-left: 4px solid #667eea;
+            padding: 2%;
+            margin: 2% 1%;
+            border-radius: 6px;
+        }
+
+        .glossary-item strong {
+            color: #667eea;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 1%;
+        }
+
+        .day-plan {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 3%;
+            margin: 2% 1%;
+            position: relative;
+        }
+
+        .day-label {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 1% 3%;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2% 1%;
+            font-size: 11px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2%;
+            text-align: left;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 2%;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        .visual-diagram {
+            background: #2d3748;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1%;
+            color: #68d391;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            overflow-x: auto;
+        }
+
+        .mistake-card {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1%;
+        }
+
+        .mistake-card h4 {
+            color: #c53030;
+            font-size: 12px;
+            margin-bottom: 2%;
+        }
+
+        .solution-card {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1% 3% 1%;
+        }
+
+        .solution-card h4 {
+            color: #22543d;
+            font-size: 12px;
+            margin-bottom: 2%;
+        }
+
+        .example-box {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 3%;
+            margin: 2% 1%;
+        }
+
+        .example-label {
+            display: inline-block;
+            padding: 1% 3%;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: bold;
+            margin-bottom: 2%;
+        }
+
+        .good-example {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .bad-example {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .resource-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 3%;
+            margin: 2% 1%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .resource-card:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .resource-card h4 {
+            color: #667eea;
+            font-size: 13px;
+            margin-bottom: 2%;
+        }
+
+        .resource-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1% 2%;
+            border-radius: 10px;
+            font-size: 9px;
+            margin-bottom: 2%;
+        }
+
+        .quick-tip-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fdebd0 100%);
+            border-left: 4px solid #f39c12;
+            padding: 2%;
+            margin: 2% 1%;
+            border-radius: 6px;
+        }
+
+        .quick-tip-box strong {
+            color: #d68910;
+            font-size: 11px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 5%;
+            margin: 2% 1%;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -4.5%;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+
+        /* Scrollbar styling */
+        .content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 2026 Email Automation Guide</h1>
+            <p>Master Modern Email Marketing & Automation</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('intro')">Intro</button>
+            <button class="tab" onclick="showSection('setup')">Setup</button>
+            <button class="tab" onclick="showSection('workflows')">Workflows</button>
+            <button class="tab" onclick="showSection('ai')">AI Tools</button>
+            <button class="tab" onclick="showSection('optimization')">Optimize</button>
+            <button class="tab" onclick="showSection('advanced')">Advanced</button>
+            <button class="tab" onclick="showSection('tutorials')">Tutorials</button>
+            <button class="tab" onclick="showSection('checklists')">Checklists</button>
+            <button class="tab" onclick="showSection('templates')">Templates</button>
+            <button class="tab" onclick="showSection('troubleshoot')">Fix Issues</button>
+            <button class="tab" onclick="showSection('beginners')">Beginners</button>
+            <button class="tab" onclick="showSection('quickstart')">Quick Start</button>
+            <button class="tab" onclick="showSection('budget')">Budget</button>
+            <button class="tab" onclick="showSection('mistakes')">Mistakes</button>
+            <button class="tab" onclick="showSection('examples')">Examples</button>
+            <button class="tab" onclick="showSection('resources')">Resources</button>
+        </div>
+
+        <div class="content">
+            <!-- INTRO SECTION -->
+            <div id="intro" class="section active">
+                <h2>Welcome to Email Automation in 2026</h2>
+                <p>Email automation has evolved dramatically with AI integration, hyper-personalization, and predictive analytics. This guide will help you master modern email marketing strategies.</p>
+
+                <div class="card">
+                    <h3>What's New in 2026?</h3>
+                    <ul>
+                        <li>AI-powered content generation and optimization</li>
+                        <li>Real-time behavioral triggers with machine learning</li>
+                        <li>Voice-activated email composition</li>
+                        <li>Advanced privacy-first personalization</li>
+                        <li>Omnichannel automation integration</li>
+                        <li>Predictive send-time optimization</li>
+                    </ul>
+                </div>
+
+                <h3>Why Email Automation Matters</h3>
+                <p>In 2026, consumers expect personalized, timely, and relevant communications. Email automation delivers ROI of $42 for every $1 spent while saving 80% of manual work time.</p>
+
+                <div class="tip">
+                    <strong>💡 Pro Tip:</strong>
+                    <p>Start with simple automation workflows and gradually increase complexity as you learn subscriber behavior patterns.</p>
+                </div>
+
+                <h3>Key Benefits</h3>
+                <ul>
+                    <li>Save 15-20 hours per week on manual email tasks</li>
+                    <li>Increase conversion rates by 50-100%</li>
+                    <li>Improve customer lifetime value by 30%</li>
+                    <li>Scale personalization to millions of subscribers</li>
+                    <li>24/7 automated customer engagement</li>
+                </ul>
+            </div>
+
+            <!-- SETUP SECTION -->
+            <div id="setup" class="section">
+                <h2>How to Set Up Email Automation</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Choose Your Email Platform</h4>
+                    <p>Select a platform that supports AI-driven automation, API integrations, and advanced segmentation.</p>
+                </div>
+
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h4>Mailchimp AI</h4>
+                        <p>Best for beginners</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>HubSpot</h4>
+                        <p>All-in-one CRM</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>ActiveCampaign</h4>
+                        <p>Advanced automation</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Klaviyo</h4>
+                        <p>E-commerce focus</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Build Your Email List</h4>
+                    <p>Create compliant opt-in forms with clear value propositions. Use lead magnets, popup forms, and social media integrations.</p>
+                    <ul>
+                        <li>Design mobile-responsive signup forms</li>
+                        <li>Offer incentives (discounts, free content, exclusive access)</li>
+                        <li>Implement double opt-in for quality leads</li>
+                        <li>Add signup forms to all digital touchpoints</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Create Audience Segments</h4>
+                    <p>Divide your list based on demographics, behavior, purchase history, and engagement levels.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Essential Segments to Create:</h3>
+                    <ul>
+                        <li><strong>New Subscribers</strong> - Welcome sequences</li>
+                        <li><strong>Active Users</strong> - Regular engagement</li>
+                        <li><strong>Inactive Users</strong> - Re-engagement campaigns</li>
+                        <li><strong>VIP Customers</strong> - Premium offers</li>
+                        <li><strong>Cart Abandoners</strong> - Recovery emails</li>
+                        <li><strong>Product Interests</strong> - Category-based</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Design Email Templates</h4>
+                    <p>Create responsive, branded templates with clear CTAs. Use AI design tools for optimization.</p>
+                    <ul>
+                        <li>Keep subject lines under 50 characters</li>
+                        <li>Use preheader text effectively</li>
+                        <li>Ensure mobile responsiveness (70% open on mobile)</li>
+                        <li>Include single, clear call-to-action</li>
+                        <li>Optimize images for fast loading</li>
+                    </ul>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Design Tip:</strong>
+                    <p>Test emails on at least 5 different devices and email clients before launching campaigns.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Set Up Tracking & Analytics</h4>
+                    <p>Configure UTM parameters, conversion tracking, and integrate with Google Analytics 4 for comprehensive data.</p>
+                </div>
+            </div>
+
+            <!-- WORKFLOWS SECTION -->
+            <div id="workflows" class="section">
+                <h2>Essential Automation Workflows</h2>
+
+                <h3>1. Welcome Email Series</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Introduce new subscribers to your brand and set expectations.</p>
+                    <p><strong>Timeline:</strong> 5-7 emails over 2 weeks</p>
+                    
+                    <h4>Workflow Structure:</h4>
+                    <ol>
+                        <li><strong>Email 1 (Immediate):</strong> Welcome & thank you + deliver promised lead magnet</li>
+                        <li><strong>Email 2 (Day 2):</strong> Brand story and mission</li>
+                        <li><strong>Email 3 (Day 4):</strong> Best resources or products</li>
+                        <li><strong>Email 4 (Day 7):</strong> Customer success stories</li>
+                        <li><strong>Email 5 (Day 10):</strong> Exclusive offer for new subscribers</li>
+                        <li><strong>Email 6 (Day 14):</strong> Invitation to follow on social media</li>
+                    </ol>
+                </div>
+
+                <h3>2. Abandoned Cart Recovery</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Recover lost sales from cart abandonment (70% average rate).</p>
+                    <p><strong>Timeline:</strong> 3 emails over 3 days</p>
+                    
+                    <h4>Workflow Structure:</h4>
+                    <ol>
+                        <li><strong>1 Hour Later:</strong> Reminder email with cart contents</li>
+                        <li><strong>24 Hours Later:</strong> Add social proof & urgency</li>
+                        <li><strong>72 Hours Later:</strong> Last chance with discount code (10-15% off)</li>
+                    </ol>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Conversion Tip:</strong>
+                    <p>Abandoned cart emails have 45% open rates and recover 10-15% of lost sales on average.</p>
+                </div>
+
+                <h3>3. Post-Purchase Follow-Up</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Build loyalty, gather feedback, and encourage repeat purchases.</p>
+                    
+                    <h4>Workflow Structure:</h4>
+                    <ol>
+                        <li><strong>Immediately:</strong> Order confirmation with tracking</li>
+                        <li><strong>Day 3:</strong> Shipping update and delivery estimate</li>
+                        <li><strong>Day 7:</strong> Request product review</li>
+                        <li><strong>Day 14:</strong> Usage tips and related products</li>
+                        <li><strong>Day 30:</strong> Replenishment reminder (if applicable)</li>
+                    </ol>
+                </div>
+
+                <h3>4. Re-Engagement Campaign</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Win back inactive subscribers before removal.</p>
+                    <p><strong>Trigger:</strong> No engagement for 60-90 days</p>
+                    
+                    <h4>Workflow Structure:</h4>
+                    <ol>
+                        <li><strong>Email 1:</strong> "We miss you" with exclusive offer</li>
+                        <li><strong>Email 2 (7 days later):</strong> Survey to understand why they left</li>
+                        <li><strong>Email 3 (14 days later):</strong> Last chance to stay subscribed</li>
+                    </ol>
+                </div>
+
+                <h3>5. Birthday/Anniversary Campaign</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Build emotional connection and drive sales.</p>
+                    <p><strong>Timing:</strong> 1 week before, on day, and 3 days after</p>
+                    <ul>
+                        <li>Personalized birthday greeting</li>
+                        <li>Special discount code (15-25% off)</li>
+                        <li>Free shipping or gift with purchase</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Important:</strong>
+                    <p>Always provide an easy unsubscribe option and honor opt-out requests immediately to maintain compliance with GDPR and CAN-SPAM.</p>
+                </div>
+
+                <h3>6. Lead Nurturing Drip Campaign</h3>
+                <div class="card">
+                    <p><strong>Purpose:</strong> Convert leads into customers through education.</p>
+                    <p><strong>Timeline:</strong> 4-8 weeks</p>
+                    
+                    <h4>Best Practices:</h4>
+                    <ul>
+                        <li>Provide valuable content without constant selling</li>
+                        <li>Segment by interest and engagement level</li>
+                        <li>Use behavioral triggers to advance sequence</li>
+                        <li>Include case studies and testimonials</li>
+                        <li>Gradually introduce product benefits</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI TOOLS SECTION -->
+            <div id="ai" class="section">
+                <h2>AI-Powered Email Automation in 2026</h2>
+
+                <div class="card">
+                    <h3>AI Capabilities for Email Marketing</h3>
+                    <ul>
+                        <li>Automated subject line generation and A/B testing</li>
+                        <li>Content personalization at individual level</li>
+                        <li>Predictive send-time optimization</li>
+                        <li>Sentiment analysis and tone adjustment</li>
+                        <li>Image generation for email graphics</li>
+                        <li>Smart segmentation based on behavior patterns</li>
+                    </ul>
+                </div>
+
+                <h3>How to Use AI in Your Campaigns</h3>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>AI Subject Line Generator</h4>
+                    <p>Use tools like ChatGPT, Claude, or built-in AI to create compelling subject lines.</p>
+                    <ul>
+                        <li>Generate 10-20 variations instantly</li>
+                        <li>A/B test top performers</li>
+                        <li>Optimize for open rates (industry avg: 21.5%)</li>
+                        <li>Personalize with subscriber data</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Dynamic Content Personalization</h4>
+                    <p>AI analyzes user behavior to customize email content for each recipient.</p>
+                    <ul>
+                        <li>Product recommendations based on browsing history</li>
+                        <li>Location-based offers and content</li>
+                        <li>Purchase history-driven suggestions</li>
+                        <li>Engagement-based content complexity</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Predictive Send-Time Optimization</h4>
+                    <p>AI determines the best time to send emails to each subscriber for maximum engagement.</p>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 AI Tip:</strong>
+                    <p>Predictive send-time can increase open rates by 15-25% compared to batch-and-blast approaches.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Automated Content Generation</h4>
+                    <p>Create email copy variations using AI writing assistants.</p>
+                    <ul>
+                        <li>Generate multiple content versions</li>
+                        <li>Maintain brand voice consistency</li>
+                        <li>Adapt tone for different segments</li>
+                        <li>Create multilingual versions</li>
+                    </ul>
+                </div>
+
+                <h3>Top AI Tools for Email Marketing (2026)</h3>
+
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h4>Jasper AI</h4>
+                        <p>Content creation</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Copy.ai</h4>
+                        <p>Email copywriting</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Phrasee</h4>
+                        <p>Subject line AI</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Seventh Sense</h4>
+                        <p>Send-time optimization</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Persado</h4>
+                        <p>Emotional targeting</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Smartwriter</h4>
+                        <p>Hyper-personalization</p>
+                    </div>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ AI Ethics:</strong>
+                    <p>Always review AI-generated content for accuracy, brand alignment, and appropriate tone before sending. Maintain human oversight.</p>
+                </div>
+            </div>
+
+            <!-- OPTIMIZATION SECTION -->
+            <div id="optimization" class="section">
+                <h2>Optimizing Email Performance</h2>
+
+                <h3>Key Metrics to Track</h3>
+                <div class="card">
+                    <ul>
+                        <li><strong>Open Rate:</strong> Industry avg 21.5% (aim for 25%+)</li>
+                        <li><strong>Click-Through Rate:</strong> Industry avg 2.3% (aim for 3%+)</li>
+                        <li><strong>Conversion Rate:</strong> Industry avg 1.2% (aim for 2%+)</li>
+                        <li><strong>Bounce Rate:</strong> Keep below 2%</li>
+                        <li><strong>Unsubscribe Rate:</strong> Keep below 0.5%</li>
+                        <li><strong>List Growth Rate:</strong> Aim for 2.5%+ monthly</li>
+                    </ul>
+                </div>
+
+                <h3>A/B Testing Strategies</h3>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Test Subject Lines</h4>
+                    <p>Most impactful element to test. Run tests on 20% of list, send winner to remaining 80%.</p>
+                    <ul>
+                        <li>Length variations (short vs. long)</li>
+                        <li>Emoji inclusion</li>
+                        <li>Personalization (name, location)</li>
+                        <li>Question vs. statement format</li>
+                        <li>Urgency vs. curiosity</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Test Send Times</h4>
+                    <p>Optimal times vary by industry and audience. Test across different days and hours.</p>
+                    <ul>
+                        <li>Best days: Tuesday-Thursday (historically)</li>
+                        <li>Best times: 10 AM, 1 PM, 8 PM local time</li>
+                        <li>Weekend vs. weekday performance</li>
+                        <li>Use AI for individual optimization</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Test Email Content</h4>
+                    <ul>
+                        <li>Image vs. text-heavy layouts</li>
+                        <li>Single CTA vs. multiple CTAs</li>
+                        <li>Short copy vs. long copy</li>
+                        <li>Button color and placement</li>
+                        <li>Video inclusion vs. static images</li>
+                    </ul>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Testing Tip:</strong>
+                    <p>Only test ONE variable at a time for clear results. Run tests on minimum 1,000 subscribers for statistical significance.</p>
+                </div>
+
+                <h3>Deliverability Best Practices</h3>
+                <div class="card">
+                    <h4>Ensure Inbox Placement:</h4>
+                    <ul>
+                        <li>Authenticate with SPF, DKIM, and DMARC</li>
+                        <li>Maintain sender reputation score above 90</li>
+                        <li>Clean list regularly (remove inactive >6 months)</li>
+                        <li>Avoid spam trigger words (Free, Guarantee, Act Now)</li>
+                        <li>Use consistent "From" name and email</li>
+                        <li>Include physical mailing address</li>
+                        <li>Monitor blacklist status weekly</li>
+                    </ul>
+                </div>
+
+                <h3>Mobile Optimization (Critical in 2026)</h3>
+                <div class="card">
+                    <p>70% of emails are opened on mobile devices. Ensure:</p>
+                    <ul>
+                        <li>Single-column layouts for easy scrolling</li>
+                        <li>Minimum 14px font size</li>
+                        <li>Touch-friendly buttons (44x44px minimum)</li>
+                        <li>Compressed images for fast loading</li>
+                        <li>Clear hierarchy with scannable content</li>
+                        <li>Preheader text optimized for mobile preview</li>
+                    </ul>
+                </div>
+
+                <h3>Engagement Improvement Tactics</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Personalization Beyond Name</h4>
+                    <ul>
+                        <li>Reference past purchases</li>
+                        <li>Location-based content</li>
+                        <li>Behavioral triggers (browsing, clicks)</li>
+                        <li>Purchase anniversary dates</li>
+                        <li>Preference-based recommendations</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Create Urgency & Scarcity</h4>
+                    <ul>
+                        <li>Limited-time offers with countdown timers</li>
+                        <li>Stock level notifications</li>
+                        <li>Flash sales and exclusive access</li>
+                        <li>Early bird discounts</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Interactive Email Elements</h4>
+                    <ul>
+                        <li>Embedded surveys and polls</li>
+                        <li>Image carousels</li>
+                        <li>Accordion menus</li>
+                        <li>GIFs and cinemagraphs</li>
+                        <li>Gamification elements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TUTORIALS SECTION -->
+            <div id="tutorials" class="section">
+                <h2>📚 Step-by-Step Tutorials</h2>
+                <p>Follow these visual tutorials to master email automation. Each tutorial includes detailed steps with simulated screenshots.</p>
+
+                <h3>Tutorial 1: Creating Your First Automated Email</h3>
+                <span class="badge easy">EASY</span>
+                <span class="badge">15 MIN</span>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 1</div>
+                    <h4>Log into Your Email Platform</h4>
+                    <p>Navigate to your email marketing platform (e.g., Mailchimp, HubSpot, ActiveCampaign).</p>
+                    
+                    <div class="screenshot-box">
+→ Dashboard → Campaigns → Create Campaign
+[Button: "Create New Campaign"]
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Quick Tip:</strong>
+                        <p>Bookmark your campaign creation page for faster access next time.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 2</div>
+                    <h4>Choose "Automated" Campaign Type</h4>
+                    <p>Select automation instead of one-time campaign.</p>
+                    
+                    <div class="screenshot-box">
+Campaign Types:
+○ Regular Campaign (Send once)
+● Automated Campaign (Triggered emails) ← SELECT THIS
+○ A/B Test Campaign
+                    </div>
+                    
+                    <p>Click "Continue" or "Next"</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 3</div>
+                    <h4>Select Your Trigger</h4>
+                    <p>Choose what action will start the automation.</p>
+                    
+                    <div class="screenshot-box">
+Available Triggers:
+☑️ When someone subscribes
+☐ When someone clicks a link
+☐ On a specific date
+☐ When someone makes a purchase
+☐ Custom trigger
+                    </div>
+                    
+                    <p>For your first automation, select "When someone subscribes" - this creates a welcome email.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 4</div>
+                    <h4>Design Your Email</h4>
+                    <p>Use the drag-and-drop editor or HTML editor.</p>
+                    
+                    <div class="screenshot-box">
+Email Editor:
+┌─────────────────────────┐
+│ [Logo Here]             │
+│                         │
+│ Welcome to [Company]!   │
+│                         │
+│ Thanks for subscribing  │
+│ [Your message here]     │
+│                         │
+│ [CTA Button]            │
+└─────────────────────────┘
+                    </div>
+                    
+                    <ul>
+                        <li>Add your logo at the top</li>
+                        <li>Write welcoming headline</li>
+                        <li>Include 2-3 short paragraphs</li>
+                        <li>Add one clear call-to-action button</li>
+                        <li>Include footer with unsubscribe link</li>
+                    </ul>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 5</div>
+                    <h4>Write Your Subject Line</h4>
+                    <p>Create a compelling subject that gets opened.</p>
+                    
+                    <div class="code-example">
+Examples:
+✓ "Welcome to [Company Name]! Here's what's next"
+✓ "Thanks for joining us, [First Name]!"
+✓ "Your [Product/Service] journey starts now"
+✗ "Newsletter" (too generic)
+✗ "Thanks" (too vague)
+                    </div>
+                    
+                    <p>Keep it under 50 characters for mobile optimization.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 6</div>
+                    <h4>Set Timing & Delays</h4>
+                    <p>Choose when the email sends after trigger.</p>
+                    
+                    <div class="screenshot-box">
+Send Timing:
+● Immediately after subscription
+○ 1 hour after subscription
+○ 24 hours after subscription
+○ Custom delay: [__] hours/days
+
+Best time to send: ● Use AI optimization
+                    </div>
+                    
+                    <p>For welcome emails, "Immediately" works best!</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 7</div>
+                    <h4>Preview & Test</h4>
+                    <p>Always test before activating!</p>
+                    
+                    <ul>
+                        <li>Click "Preview" to see desktop/mobile versions</li>
+                        <li>Send test email to yourself</li>
+                        <li>Check email on phone and computer</li>
+                        <li>Verify all links work</li>
+                        <li>Check images load properly</li>
+                    </ul>
+                    
+                    <div class="warning">
+                        <strong>⚠️ Testing Checklist:</strong>
+                        <p>Test on Gmail, Outlook, and Apple Mail minimum. These cover 80% of users.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 8</div>
+                    <h4>Activate Your Automation</h4>
+                    <p>Turn it on and monitor performance.</p>
+                    
+                    <div class="screenshot-box">
+Status: ○ Draft    ● Active
+[Button: "Activate Automation"]
+
+✓ Automation is now live!
+  New subscribers will receive this email.
+                    </div>
+                    
+                    <p>Congratulations! Your first automation is running! 🎉</p>
+                </div>
+
+                <div class="card">
+                    <h4>📊 Monitor Your Results:</h4>
+                    <p>Check performance after 1 week:</p>
+                    <ul>
+                        <li>Open rate (aim for 25%+)</li>
+                        <li>Click rate (aim for 3%+)</li>
+                        <li>Unsubscribe rate (should be under 0.5%)</li>
+                    </ul>
+                </div>
+
+                <h3>Tutorial 2: Building a Welcome Series</h3>
+                <span class="badge medium">MEDIUM</span>
+                <span class="badge">30 MIN</span>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 1</div>
+                    <h4>Create Multi-Email Workflow</h4>
+                    <p>Instead of single email, build a 5-email sequence.</p>
+                    
+                    <div class="screenshot-box">
+Workflow Builder:
+[Trigger: New Subscriber]
+        ↓
+    [Email 1] → Immediate
+        ↓ (Wait 2 days)
+    [Email 2] → Day 2
+        ↓ (Wait 2 days)
+    [Email 3] → Day 4
+        ↓ (Wait 3 days)
+    [Email 4] → Day 7
+        ↓ (Wait 3 days)
+    [Email 5] → Day 10
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 2</div>
+                    <h4>Plan Your Email Content</h4>
+                    <p>Map out what each email will accomplish.</p>
+                    
+                    <div class="template-box">
+                        <h4>Welcome Series Content Map:</h4>
+                        <p><strong>Email 1:</strong> Welcome + deliver lead magnet</p>
+                        <p><strong>Email 2:</strong> Share brand story & values</p>
+                        <p><strong>Email 3:</strong> Highlight best products/resources</p>
+                        <p><strong>Email 4:</strong> Customer testimonials & social proof</p>
+                        <p><strong>Email 5:</strong> Special offer for new subscribers</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 3</div>
+                    <h4>Add Wait Delays Between Emails</h4>
+                    <p>Space emails appropriately to avoid overwhelming subscribers.</p>
+                    
+                    <div class="screenshot-box">
+After [Email 1]:
+Add Wait Step:
+○ 1 day
+● 2 days ← RECOMMENDED
+○ 3 days
+○ Custom: [__] days
+                    </div>
+                    
+                    <p>Drag "Wait" blocks between each email in your workflow.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 4</div>
+                    <h4>Add Conditional Logic (Optional)</h4>
+                    <p>Send different emails based on subscriber behavior.</p>
+                    
+                    <div class="screenshot-box">
+If/Else Condition:
+IF subscriber opened Email 1
+    → Send Email 2A (engaged version)
+ELSE
+    → Send Email 2B (re-engagement version)
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Pro Tip:</strong>
+                        <p>Start simple without conditions, add them later once you understand subscriber patterns.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 5</div>
+                    <h4>Set Goal Tracking</h4>
+                    <p>Define what success looks like for this series.</p>
+                    
+                    <div class="screenshot-box">
+Workflow Goals:
+☑️ Track: First purchase
+☑️ Track: Email engagement
+☐ Track: Website visit
+☐ Track: Custom conversion
+
+Stop workflow when goal achieved: ● Yes
+                    </div>
+                    
+                    <p>If someone makes a purchase, they exit the welcome series automatically.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 6</div>
+                    <h4>Test the Entire Flow</h4>
+                    <p>Subscribe yourself and verify all emails arrive correctly.</p>
+                    
+                    <ul>
+                        <li>Use a test email address</li>
+                        <li>Trigger the workflow manually</li>
+                        <li>Check timing is correct</li>
+                        <li>Verify personalization works</li>
+                        <li>Test all links in every email</li>
+                    </ul>
+                </div>
+
+                <h3>Tutorial 3: Setting Up Your First A/B Test</h3>
+                <span class="badge easy">EASY</span>
+                <span class="badge">20 MIN</span>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 1</div>
+                    <h4>Choose What to Test</h4>
+                    <p>Start with subject lines - they have the biggest impact on opens.</p>
+                    
+                    <div class="card">
+                        <h4>Good First Tests:</h4>
+                        <ul>
+                            <li>✓ Subject line A vs Subject line B</li>
+                            <li>✓ With emoji vs Without emoji</li>
+                            <li>✓ Question vs Statement</li>
+                            <li>✓ Short vs Long subject</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 2</div>
+                    <h4>Create Your Variants</h4>
+                    <p>In your email editor, enable A/B testing.</p>
+                    
+                    <div class="screenshot-box">
+A/B Test Settings:
+Test Type: ● Subject Line
+
+Variant A: "Flash Sale: 50% Off Everything!"
+Variant B: "You're invited: Exclusive 50% discount"
+
+Send to: ☑️ 20% of audience (test group)
+Winner sends to: ☑️ 80% remaining
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 3</div>
+                    <h4>Set Test Duration</h4>
+                    <p>Give the test enough time to collect meaningful data.</p>
+                    
+                    <div class="screenshot-box">
+Test Duration:
+○ 1 hour
+○ 4 hours
+● 24 hours ← RECOMMENDED
+○ Custom: [__] hours
+
+Winning Metric: ● Open Rate
+                    </div>
+                    
+                    <p>24 hours accounts for different time zones and checking habits.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 4</div>
+                    <h4>Review Results</h4>
+                    <p>After the test completes, analyze which variant won.</p>
+                    
+                    <div class="screenshot-box">
+A/B Test Results:
+─────────────────────────────
+Variant A: "Flash Sale: 50% Off"
+Sent: 1,000 | Opens: 240 (24%)
+
+Variant B: "Exclusive 50% discount"  
+Sent: 1,000 | Opens: 310 (31%) ← WINNER
+
+Winner sent to remaining 8,000 subscribers
+─────────────────────────────
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Testing Insight:</strong>
+                    <p>You need minimum 1,000 subscribers in your test for statistically valid results. Smaller lists should skip A/B testing.</p>
+                </div>
+
+                <h3>Tutorial 4: Creating Effective Email Templates</h3>
+                <span class="badge medium">MEDIUM</span>
+                <span class="badge">45 MIN</span>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 1</div>
+                    <h4>Start with Template Structure</h4>
+                    <p>Every great email follows a proven structure.</p>
+                    
+                    <div class="code-example">
+Email Template Structure:
+┌────────────────────────────────┐
+│ 1. Logo/Header (150px height) │
+├────────────────────────────────┤
+│ 2. Hero Image (600px wide)    │
+├────────────────────────────────┤
+│ 3. Headline (24-32px font)    │
+├────────────────────────────────┤
+│ 4. Body Copy (14-16px font)   │
+│    - 2-3 paragraphs max        │
+├────────────────────────────────┤
+│ 5. Call-to-Action Button       │
+│    (44px height minimum)       │
+├────────────────────────────────┤
+│ 6. Social Media Links          │
+├────────────────────────────────┤
+│ 7. Footer (address, unsubscribe)│
+└────────────────────────────────┘
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 2</div>
+                    <h4>Choose Your Color Scheme</h4>
+                    <p>Stick to 2-3 colors maximum for clean design.</p>
+                    
+                    <div class="screenshot-box">
+Brand Colors:
+● Primary: #667eea (CTA buttons, links)
+● Secondary: #764ba2 (accents)
+● Background: #ffffff (main)
+● Text: #2d3748 (body text)
+
+Test for accessibility: Use contrast checker
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 3</div>
+                    <h4>Design Mobile-First</h4>
+                    <p>70% of emails are opened on mobile - design for small screens first.</p>
+                    
+                    <ul>
+                        <li>Single column layout (no multi-column on mobile)</li>
+                        <li>Minimum 14px font size</li>
+                        <li>44x44px minimum button size</li>
+                        <li>Large, tappable links</li>
+                        <li>Compressed images (under 200KB total)</li>
+                    </ul>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 4</div>
+                    <h4>Write Compelling Copy</h4>
+                    <p>Keep it concise and action-oriented.</p>
+                    
+                    <div class="template-box">
+                        <h4>Email Copy Formula:</h4>
+                        <p><strong>Headline:</strong> State the benefit (7-10 words)</p>
+                        <p><strong>Opening:</strong> Hook them immediately (1-2 sentences)</p>
+                        <p><strong>Body:</strong> Explain value (2-3 short paragraphs)</p>
+                        <p><strong>CTA:</strong> Clear action (3-5 words on button)</p>
+                    </div>
+                    
+                    <div class="code-example">
+Example:
+Headline: "Get 50% Off Your First Order"
+Opening: "Welcome! Here's an exclusive offer just for you."
+Body: "We're excited to have you join our community. 
+       As a thank you, enjoy 50% off any item in our store."
+CTA: "Shop Now →"
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 5</div>
+                    <h4>Add Personalization Tokens</h4>
+                    <p>Make emails feel personal to each recipient.</p>
+                    
+                    <div class="screenshot-box">
+Personalization Options:
+● {{first_name}} - "Hi Sarah,"
+● {{company}} - "Thanks for choosing Acme Corp"
+● {{last_purchase}} - "Love your new shoes?"
+● {{location}} - "Events near Chicago"
+                    </div>
+                    
+                    <p>Always include a fallback: "Hi {{first_name|there}}"</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 6</div>
+                    <h4>Save as Reusable Template</h4>
+                    <p>Save your design for future campaigns.</p>
+                    
+                    <div class="screenshot-box">
+[Button: "Save as Template"]
+
+Template Name: "Welcome Email - Primary"
+Category: ● Transactional
+Tags: welcome, onboarding, new-subscriber
+
+☑️ Make available to team
+                    </div>
+                </div>
+
+                <h3>Tutorial 5: Integrating Email Platform with E-commerce</h3>
+                <span class="badge hard">ADVANCED</span>
+                <span class="badge">60 MIN</span>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 1</div>
+                    <h4>Find Your Integration</h4>
+                    <p>Connect your email platform to your store.</p>
+                    
+                    <div class="screenshot-box">
+Integrations → E-commerce
+Available Platforms:
+☑️ Shopify
+☐ WooCommerce
+☐ BigCommerce
+☐ Magento
+☐ Custom API
+
+[Button: "Connect to Shopify"]
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 2</div>
+                    <h4>Authorize Connection</h4>
+                    <p>Grant permissions for data sync.</p>
+                    
+                    <div class="screenshot-box">
+Shopify Authorization:
+Allow [Email Platform] to access:
+☑️ Customer data
+☑️ Order history
+☑️ Product catalog
+☑️ Cart abandonment data
+
+[Button: "Authorize Access"]
+                    </div>
+                    
+                    <div class="warning">
+                        <strong>⚠️ Privacy Note:</strong>
+                        <p>Only grant minimum necessary permissions. Review your platform's privacy policy.</p>
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 3</div>
+                    <h4>Enable Data Syncing</h4>
+                    <p>Choose what data to sync automatically.</p>
+                    
+                    <div class="screenshot-box">
+Sync Settings:
+☑️ New customers → Email list
+☑️ Purchase events → Tag customers
+☑️ Product views → Behavioral triggers
+☑️ Cart abandonment → Automation trigger
+☐ Refund events
+
+Sync Frequency: ● Real-time
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 4</div>
+                    <h4>Set Up Abandoned Cart Automation</h4>
+                    <p>This integration unlocks powerful e-commerce automations.</p>
+                    
+                    <div class="screenshot-box">
+Trigger: Cart Abandoned (no purchase 1 hour)
+        ↓
+    [Wait 1 hour]
+        ↓
+    [Email 1: Cart Reminder]
+        ↓
+    [Wait 24 hours]
+        ↓
+    [Email 2: Add Social Proof]
+        ↓
+    [Wait 48 hours]
+        ↓
+    [Email 3: Discount Offer]
+                    </div>
+                </div>
+
+                <div class="tutorial-step">
+                    <div class="tutorial-number">Step 5</div>
+                    <h4>Test the Integration</h4>
+                    <p>Verify data flows correctly.</p>
+                    
+                    <ul>
+                        <li>Add item to cart on your store</li>
+                        <li>Abandon cart without purchasing</li>
+                        <li>Wait for trigger delay</li>
+                        <li>Check if email arrives</li>
+                        <li>Verify cart items appear correctly</li>
+                        <li>Test purchase completion stops workflow</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>🎯 Integration Success Metrics:</h4>
+                    <ul>
+                        <li>Cart recovery rate: 10-15% average</li>
+                        <li>Revenue per email: $5-15 average</li>
+                        <li>Time saved: 10+ hours/week on manual tasks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CHECKLISTS SECTION -->
+            <div id="checklists" class="section">
+                <h2>✅ Interactive Checklists</h2>
+                <p>Use these checklists to ensure you don't miss critical steps. Tap checkboxes to track your progress!</p>
+
+                <h3>Email Automation Setup Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="setup-progress" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; font-size: 10px; color: #667eea; font-weight: bold;">
+                    <span id="setup-count">0</span>/20 Complete
+                </p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Choose and sign up for email marketing platform</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Verify domain authentication (SPF, DKIM, DMARC)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Create branded email templates (minimum 3)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Set up signup forms on website</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Enable double opt-in for quality leads</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Create lead magnet or signup incentive</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Design welcome email series (5-7 emails)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Set up audience segments (minimum 4)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Integrate with CRM or e-commerce platform</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Configure tracking and analytics (UTM parameters)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Add physical mailing address to templates</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Create unsubscribe page and process</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Set up abandoned cart recovery workflow</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Configure re-engagement campaign for inactive users</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Test emails on 5+ devices and email clients</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Review privacy policy and GDPR compliance</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Set up email deliverability monitoring</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Create content calendar for next 30 days</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Train team members on platform usage</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'setup')"></div>
+                        <p>Launch first campaign and monitor results</p>
+                    </div>
+                </div>
+
+                <h3>Pre-Launch Campaign Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="prelaunch-progress" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; font-size: 10px; color: #667eea; font-weight: bold;">
+                    <span id="prelaunch-count">0</span>/15 Complete
+                </p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Subject line tested (open A/B test if possible)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Preheader text optimized (40-50 characters)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Personalization tokens working correctly</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>All links tested and working</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Images optimized and loading quickly</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Mobile responsiveness verified</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Spam score checked (use Mail Tester)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Sender name and email correct</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Reply-to address configured</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Correct audience segment selected</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Send time optimized for audience</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>UTM parameters added to all links</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Test email sent to team for review</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Landing page ready (if applicable)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'prelaunch')"></div>
+                        <p>Conversion goals set up in analytics</p>
+                    </div>
+                </div>
+
+                <h3>Monthly Email Health Check</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="monthly-progress" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; font-size: 10px; color: #667eea; font-weight: bold;">
+                    <span id="monthly-count">0</span>/12 Complete
+                </p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Review overall engagement rates (opens, clicks)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Clean list: remove inactive subscribers (6+ months)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Check sender reputation score</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Verify not on any blacklists</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Analyze top performing emails</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Review automation performance metrics</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Update audience segments based on behavior</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Test new subject line variations</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Review and update email templates</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Check for broken links across templates</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Analyze list growth rate</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'monthly')"></div>
+                        <p>Calculate email marketing ROI</p>
+                    </div>
+                </div>
+
+                <h3>GDPR Compliance Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="gdpr-progress" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; font-size: 10px; color: #667eea; font-weight: bold;">
+                    <span id="gdpr-count">0</span>/10 Complete
+                </p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Explicit consent obtained for all subscribers</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Clear privacy policy visible on signup forms</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Easy unsubscribe option in every email</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Preference center for subscription management</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Data retention policy documented</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Process for data access requests in place</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Process for data deletion requests in place</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Third-party processors GDPR compliant</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Data processing agreement with email platform</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'gdpr')"></div>
+                        <p>Regular compliance audits scheduled</p>
+                    </div>
+                </div>
+
+                <h3>Email Design Best Practices Checklist</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="design-progress" style="width: 0%"></div>
+                </div>
+                <p style="text-align: center; font-size: 10px; color: #667eea; font-weight: bold;">
+                    <span id="design-count">0</span>/15 Complete
+                </p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Single column layout for mobile</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Minimum 14px font size for body text</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Touch-friendly buttons (44x44px minimum)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Maximum 600px email width</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Alt text on all images</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Images under 1MB total email size</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Sufficient color contrast (WCAG AA standard)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>One primary call-to-action</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Clear visual hierarchy</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Consistent brand colors and fonts</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Adequate white space (not cramped)</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Social media icons included</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Footer with company info and address</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>Content above the fold is compelling</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checkbox" onclick="toggleCheck(this, 'design')"></div>
+                        <p>No more than 3 fonts used</p>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Checklist Tip:</strong>
+                    <p>Complete these checklists in order: Setup → Pre-Launch → Monthly Health → GDPR → Design. Your progress is saved locally!</p>
+                </div>
+            </div>
+
+            <!-- TEMPLATES SECTION -->
+            <div id="advanced" class="section">
+                <h2>Advanced Automation Strategies</h2>
+
+                <h3>Multi-Channel Automation Integration</h3>
+                <div class="card">
+                    <p>Combine email with other channels for maximum impact:</p>
+                    <ul>
+                        <li><strong>Email + SMS:</strong> 50% higher conversion rates</li>
+                        <li><strong>Email + Retargeting Ads:</strong> Reinforce messaging</li>
+                        <li><strong>Email + Push Notifications:</strong> Mobile app engagement</li>
+                        <li><strong>Email + Social Media:</strong> Cross-platform consistency</li>
+                        <li><strong>Email + Chatbots:</strong> Automated customer service</li>
+                    </ul>
+                </div>
+
+                <h3>Behavioral Trigger Automation</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Browse Abandonment</h4>
+                    <p>Send emails when users view products but don't add to cart.</p>
+                    <ul>
+                        <li>Trigger: 24 hours after browsing</li>
+                        <li>Include viewed products with reviews</li>
+                        <li>Add similar recommendations</li>
+                        <li>Conversion rate: 8-12%</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Milestone Celebrations</h4>
+                    <p>Celebrate customer journey milestones.</p>
+                    <ul>
+                        <li>1 year anniversary as customer</li>
+                        <li>Xth purchase celebration</li>
+                        <li>Loyalty tier achievements</li>
+                        <li>Total spend milestones</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Engagement-Based Segmentation</h4>
+                    <p>Automatically adjust email frequency based on engagement.</p>
+                    <ul>
+                        <li>High engagers: More frequent emails</li>
+                        <li>Medium engagers: Standard cadence</li>
+                        <li>Low engagers: Reduced frequency + re-engagement</li>
+                    </ul>
+                </div>
+
+                <h3>Advanced Personalization Techniques</h3>
+                <div class="card">
+                    <h4>Dynamic Product Recommendations:</h4>
+                    <ul>
+                        <li>AI-powered product suggestions</li>
+                        <li>Collaborative filtering (what similar users bought)</li>
+                        <li>Trending items in their category</li>
+                        <li>Complementary product bundles</li>
+                        <li>Price-point matching</li>
+                    </ul>
+                </div>
+
+                <h3>Predictive Analytics Implementation</h3>
+                <div class="card">
+                    <p>Use machine learning to predict and prevent:</p>
+                    <ul>
+                        <li><strong>Churn Prediction:</strong> Identify at-risk customers before they leave</li>
+                        <li><strong>Lifetime Value Forecasting:</strong> Focus on high-value prospects</li>
+                        <li><strong>Next Purchase Prediction:</strong> Optimal timing for offers</li>
+                        <li><strong>Product Affinity:</strong> What they'll buy next</li>
+                    </ul>
+                </div>
+
+                <h3>API Integrations & Webhooks</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Connect Your Tech Stack</h4>
+                    <p>Integrate email platform with:</p>
+                    <ul>
+                        <li>CRM systems (Salesforce, HubSpot)</li>
+                        <li>E-commerce platforms (Shopify, WooCommerce)</li>
+                        <li>Analytics tools (Google Analytics, Mixpanel)</li>
+                        <li>Customer support (Zendesk, Intercom)</li>
+                        <li>Payment processors (Stripe, PayPal)</li>
+                    </ul>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Integration Tip:</strong>
+                    <p>Use Zapier or Make (formerly Integromat) to connect 5,000+ apps without coding knowledge.</p>
+                </div>
+
+                <h3>Privacy & Compliance in 2026</h3>
+                <div class="warning">
+                    <strong>⚠️ Critical Compliance:</strong>
+                    <p>Stay compliant with global privacy regulations:</p>
+                    <ul>
+                        <li><strong>GDPR (EU):</strong> Explicit consent, data portability, right to be forgotten</li>
+                        <li><strong>CCPA (California):</strong> Consumer data rights and opt-outs</li>
+                        <li><strong>CAN-SPAM:</strong> Clear identification, opt-out mechanism</li>
+                        <li><strong>CASL (Canada):</strong> Express consent requirements</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>Privacy-First Personalization:</h4>
+                    <ul>
+                        <li>Use first-party data exclusively</li>
+                        <li>Implement preference centers</li>
+                        <li>Transparent data collection practices</li>
+                        <li>Easy data access and deletion requests</li>
+                        <li>Cookie-less tracking alternatives</li>
+                        <li>Zero-party data collection (surveys, quizzes)</li>
+                    </ul>
+                </div>
+
+                <h3>Email Automation ROI Calculation</h3>
+                <div class="card">
+                    <p><strong>Formula:</strong> <code>(Revenue - Cost) / Cost × 100</code></p>
+                    
+                    <h4>Track These Costs:</h4>
+                    <ul>
+                        <li>Email platform subscription</li>
+                        <li>Design and development time</li>
+                        <li>AI tools and integrations</li>
+                        <li>List acquisition costs</li>
+                    </ul>
+                    
+                    <h4>Track These Benefits:</h4>
+                    <ul>
+                        <li>Direct revenue from campaigns</li>
+                        <li>Time saved from automation</li>
+                        <li>Increased customer lifetime value</li>
+                        <li>Reduced churn rate</li>
+                    </ul>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Success Metric:</strong>
+                    <p>Top-performing brands achieve 5,000%+ ROI from email automation. Start with realistic goals of 1,000% and optimize upward.</p>
+                </div>
+            </div>
+
+            <!-- TEMPLATES SECTION -->
+            <div id="templates" class="section">
+                <h2>📝 Email Template Library</h2>
+                <p>Copy-paste ready templates for common email scenarios. Customize with your brand voice and details.</p>
+
+                <h3>Subject Line Templates</h3>
+                
+                <div class="template-box">
+                    <h4>Welcome Email Subject Lines</h4>
+                    <div class="code-example">
+✓ "Welcome to [Company Name]! Here's what's next"
+✓ "Thanks for joining us, [First Name]!"
+✓ "Your [Product/Service] journey starts now 🚀"
+✓ "[First Name], here's your exclusive welcome gift"
+✓ "You're in! What to expect from [Company Name]"
+✓ "Welcome aboard! Let's get you started"
+✓ "Here's what makes [Company Name] special"
+✓ "Thanks for subscribing! Your guide is ready"
+✓ "[First Name]'s [Company] adventure begins"
+✓ "Welcome! Here's 20% off to get you started"
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy All</button>
+                </div>
+
+                <div class="template-box">
+                    <h4>Abandoned Cart Subject Lines</h4>
+                    <div class="code-example">
+✓ "Did you forget something, [First Name]?"
+✓ "Your cart misses you! Complete your order"
+✓ "Still interested? Your items are waiting"
+✓ "Last chance: Your cart expires in 24 hours"
+✓ "Psst... you left these behind"
+✓ "[First Name], your cart is getting lonely"
+✓ "Complete your purchase and get free shipping"
+✓ "Don't miss out! Your favorites are selling fast"
+✓ "Oops! You forgot to checkout"
+✓ "Your items are reserved - for now"
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy All</button>
+                </div>
+
+                <div class="template-box">
+                    <h4>Re-engagement Subject Lines</h4>
+                    <div class="code-example">
+✓ "We miss you, [First Name]! Come back?"
+✓ "It's been a while... here's 25% off"
+✓ "Are you still interested in [Product Category]?"
+✓ "We want you back! Exclusive offer inside"
+✓ "[First Name], we've missed you"
+✓ "Before you go... one last offer"
+✓ "Don't let this be goodbye"
+✓ "We've improved! Give us another chance"
+✓ "Your exclusive return offer awaits"
+✓ "Update your preferences (or say goodbye)"
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy All</button>
+                </div>
+
+                <h3>Email Body Templates</h3>
+
+                <div class="template-box">
+                    <h4>Welcome Email #1 (Immediate)</h4>
+                    <div class="code-example">
+Subject: Welcome to [Company Name]! Here's what's next
+
+Hi [First Name],
+
+Welcome to the [Company Name] family! We're thrilled to have you on board.
+
+As promised, here's your [Lead Magnet/Resource]:
+[DOWNLOAD LINK/ACCESS BUTTON]
+
+Here's what you can expect from us:
+• [Benefit 1]: Weekly tips and insights
+• [Benefit 2]: Exclusive member-only discounts
+• [Benefit 3]: Early access to new products
+
+Want to make the most of your membership? Check out our getting started guide:
+[LINK TO GUIDE]
+
+Questions? Just hit reply - we'd love to hear from you!
+
+Welcome aboard,
+[Your Name]
+[Company Name]
+
+P.S. Follow us on [Social Media] for daily inspiration!
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                </div>
+
+                <div class="template-box">
+                    <h4>Abandoned Cart Email #1 (1 Hour Later)</h4>
+                    <div class="code-example">
+Subject: Did you forget something, [First Name]?
+
+Hi [First Name],
+
+We noticed you left some items in your cart:
+
+[PRODUCT IMAGE]
+[Product Name] - $[Price]
+[Product Name] - $[Price]
+
+Total: $[Total]
+
+Complete your purchase now:
+[CHECKOUT BUTTON]
+
+Need help deciding? Our customer support team is here 24/7.
+
+Happy shopping!
+[Company Name]
+
+P.S. These items are popular and may sell out soon!
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                </div>
+
+                <div class="template-box">
+                    <h4>Post-Purchase Thank You Email</h4>
+                    <div class="code-example">
+Subject: Thank you for your order, [First Name]! 🎉
+
+Hi [First Name],
+
+Your order #[Order Number] is confirmed! Thank you for choosing [Company Name].
+
+Order Summary:
+[Product Name] x [Quantity] - $[Price]
+[Product Name] x [Quantity] - $[Price]
+
+Total: $[Total]
+
+Shipping to: [Address]
+Estimated Delivery: [Date]
+
+[TRACK YOUR ORDER BUTTON]
+
+While you wait, here are some tips to get the most out of your purchase:
+• [Tip 1]
+• [Tip 2]
+• [Tip 3]
+
+Questions? Reply to this email or visit our help center.
+
+Thank you for your business!
+[Company Name]
+
+P.S. Love your purchase? Leave a review and get 10% off your next order!
+                    </div>
+                    <button class="copy-button" onclick="copyTemplate(this)">Copy Template</button>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Template Tip:</strong>
+                    <p>Always customize templates with your brand voice. Replace [placeholders] with your specific details. Test before sending!</p>
+                </div>
+            </div>
+
+            <!-- TROUBLESHOOTING SECTION -->
+            <div id="troubleshoot" class="section">
+                <h2>🔧 Troubleshooting Guide</h2>
+                <p>Having issues? Find solutions to common email automation problems here.</p>
+
+                <h3>Problem: Emails Going to Spam</h3>
+                
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Why are my emails landing in spam? 📧</span>
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <h4>Common Causes:</h4>
+                        <ul>
+                            <li>Poor sender reputation</li>
+                            <li>Missing email authentication (SPF, DKIM, DMARC)</li>
+                            <li>Spam trigger words in subject/body</li>
+                            <li>High complaint rate</li>
+                            <li>Low engagement rates</li>
+                        </ul>
+                        
+                        <h4>Solutions:</h4>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Verify Email Authentication</h4>
+                            <p>Check your DNS records have proper authentication: SPF, DKIM, and DMARC. Use tools like MXToolbox to verify your setup.</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Check Sender Reputation</h4>
+                            <p>Visit SenderScore.org and check your IP reputation (aim for 90+)</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Avoid Spam Trigger Words</h4>
+                            <div class="code-example">
+Avoid: FREE, BUY NOW, ACT NOW, LIMITED TIME, 
+URGENT, $$$$, GUARANTEE, CLICK HERE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Problem: Low Open Rates</h3>
+                
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Why aren't people opening my emails? 📊</span>
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <h4>Benchmark: Industry average is 21.5% open rate</h4>
+                        
+                        <h4>Quick Fixes:</h4>
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Improve Subject Lines</h4>
+                            <ul>
+                                <li>Keep under 50 characters</li>
+                                <li>Use personalization ([First Name])</li>
+                                <li>Create curiosity or urgency</li>
+                                <li>A/B test different approaches</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Optimize Send Times</h4>
+                            <p>Best times: Tuesday-Thursday at 10 AM, 1 PM, or 8 PM. Use AI send-time optimization if available.</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <h4>Segment Your Audience</h4>
+                            <p>Send targeted content to specific segments instead of batch-and-blast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Problem: High Unsubscribe Rate</h3>
+                
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Too many people are unsubscribing 😞</span>
+                        <span>+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <h4>Benchmark: Keep under 0.5% per campaign</h4>
+                        
+                        <div class="warning">
+                            <strong>⚠️ Warning:</strong>
+                            <p>Unsubscribe rates above 1% indicate serious problems!</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <h4>Review Email Frequency</h4>
+                            <p>Are you emailing too often? Survey your audience to find the right cadence.</p>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <h4>Offer Preference Center</h4>
+                            <p>Let subscribers choose frequency and topics instead of unsubscribing completely</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>🆘 Still Need Help?</h4>
+                    <p>If these solutions don't fix your issue:</p>
+                    <ul>
+                        <li>Check your email platform's documentation</li>
+                        <li>Search their community forums</li>
+                        <li>Contact customer support with specifics</li>
+                        <li>Join email marketing communities</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BEGINNERS SECTION - Email Marketing 101 -->
+            <div id="beginners" class="section">
+                <h2>🎓 Email Marketing 101</h2>
+                <p>New to email marketing? Start here! This section explains everything in simple terms.</p>
+
+                <h3>What is Email Automation? (Explained Simply)</h3>
+                <div class="card">
+                    <p>Imagine having a robot assistant that sends perfectly timed emails to your customers while you sleep. That's email automation!</p>
+                    
+                    <h4>In Simple Terms:</h4>
+                    <p>Email automation is like setting up dominoes. You arrange them once (create the emails), and when someone triggers the first domino (like signing up), all the others fall in the right order automatically.</p>
+                    
+                    <div class="visual-diagram">
+Person Signs Up → Welcome Email (immediate)
+       ↓
+   Wait 2 Days → Brand Story Email
+       ↓
+   Wait 3 Days → Product Showcase Email
+       ↓
+   Wait 7 Days → Special Offer Email
+                    </div>
+                    
+                    <p>You set it up once, and it runs forever!</p>
+                </div>
+
+                <h3>Email Marketing Glossary</h3>
+                <p>Learn the lingo! Here are 50+ terms every email marketer should know:</p>
+
+                <div class="glossary-item">
+                    <strong>A/B Testing (Split Testing)</strong>
+                    <p>Sending two versions of an email to see which performs better. Like trying two headlines to see which gets more opens.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Automation</strong>
+                    <p>Emails that send automatically based on triggers (like someone signing up or abandoning a cart).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Bounce Rate</strong>
+                    <p>Percentage of emails that couldn't be delivered. Hard bounces (invalid email) vs soft bounces (full inbox).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Call-to-Action (CTA)</strong>
+                    <p>The button or link telling readers what to do next. Examples: "Shop Now", "Download Free Guide", "Learn More".</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Campaign</strong>
+                    <p>A single email or series of emails sent to your list for a specific purpose.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Click-Through Rate (CTR)</strong>
+                    <p>Percentage of people who clicked a link in your email. Industry average: 2.3%</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Conversion Rate</strong>
+                    <p>Percentage of people who completed your desired action (bought, signed up, downloaded).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>CRM (Customer Relationship Management)</strong>
+                    <p>Software that manages all your customer information and interactions.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Deliverability</strong>
+                    <p>Your ability to actually reach inboxes (not spam folders). Affected by sender reputation.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>DKIM (DomainKeys Identified Mail)</strong>
+                    <p>Email authentication that proves your emails are really from you. Required for good deliverability.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Double Opt-in</strong>
+                    <p>Requires subscribers to confirm their email address before joining your list. Ensures quality.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Drip Campaign</strong>
+                    <p>A series of automated emails sent over time to nurture leads.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>ESP (Email Service Provider)</strong>
+                    <p>The platform you use to send emails (Mailchimp, HubSpot, etc.).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>GDPR (General Data Protection Regulation)</strong>
+                    <p>EU privacy law requiring explicit consent to email people. Applies globally.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>HTML Email</strong>
+                    <p>Emails with design, images, and formatting (vs plain text emails).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Lead Magnet</strong>
+                    <p>Free valuable content offered in exchange for an email address (ebook, checklist, discount code).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>List Hygiene</strong>
+                    <p>Regularly cleaning your email list by removing inactive or invalid addresses.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Newsletter</strong>
+                    <p>Regular email update sent to subscribers, usually weekly or monthly.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Open Rate</strong>
+                    <p>Percentage of people who opened your email. Industry average: 21.5%</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Personalization</strong>
+                    <p>Customizing emails with subscriber data like their name, location, or purchase history.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Preheader Text</strong>
+                    <p>Preview text shown in inbox next to subject line. Like a mini-description.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Responsive Design</strong>
+                    <p>Emails that automatically adjust to look good on any device (phone, tablet, desktop).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>ROI (Return on Investment)</strong>
+                    <p>How much money you make vs spend. Email marketing averages $42 for every $1 spent!</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Segmentation</strong>
+                    <p>Dividing your email list into groups based on behavior, demographics, or interests.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Sender Reputation</strong>
+                    <p>Your email "credit score" - affects whether you reach inboxes or spam. Keep above 90.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>SPF (Sender Policy Framework)</strong>
+                    <p>Email authentication that lists which servers can send email from your domain.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Subject Line</strong>
+                    <p>The headline of your email. Most important factor for open rates.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Transactional Email</strong>
+                    <p>Automated emails triggered by actions (order confirmation, password reset, shipping update).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Trigger</strong>
+                    <p>The action that starts an automated email (signup, purchase, cart abandonment, birthday).</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Unsubscribe Rate</strong>
+                    <p>Percentage who opt-out of your emails. Keep below 0.5% per campaign.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>UTM Parameters</strong>
+                    <p>Tracking codes added to links to measure campaign performance in analytics.</p>
+                </div>
+
+                <h3>How Email Platforms Work (Visual Explanation)</h3>
+                <div class="visual-diagram">
+┌─────────────────────────────────────────┐
+│  YOU (Email Marketer)                   │
+│  - Design emails                        │
+│  - Set up automation                    │
+│  - Upload contacts                      │
+└────────────┬────────────────────────────┘
+             │
+             ↓
+┌─────────────────────────────────────────┐
+│  EMAIL PLATFORM (Mailchimp, HubSpot)    │
+│  - Stores your contacts                 │
+│  - Sends your emails                    │
+│  - Tracks results                       │
+│  - Handles automation                   │
+└────────────┬────────────────────────────┘
+             │
+             ↓
+┌─────────────────────────────────────────┐
+│  EMAIL SERVERS (Gmail, Outlook)         │
+│  - Receive your emails                  │
+│  - Filter spam                          │
+│  - Deliver to inboxes                   │
+└────────────┬────────────────────────────┘
+             │
+             ↓
+┌─────────────────────────────────────────┐
+│  YOUR SUBSCRIBERS                       │
+│  - See email in inbox                   │
+│  - Open and read                        │
+│  - Click links                          │
+│  - Take action                          │
+└─────────────────────────────────────────┘
+                </div>
+
+                <h3>Understanding Email Metrics for Beginners</h3>
+                <div class="card">
+                    <h4>The 5 Most Important Metrics:</h4>
+                    
+                    <p><strong>1. Open Rate (21.5% average)</strong></p>
+                    <p>How many people opened your email. Good subject lines = higher opens.</p>
+                    
+                    <p><strong>2. Click-Through Rate / CTR (2.3% average)</strong></p>
+                    <p>How many people clicked a link. Good content + clear CTA = higher clicks.</p>
+                    
+                    <p><strong>3. Conversion Rate (1-2% average)</strong></p>
+                    <p>How many people did what you wanted (bought, signed up). The ultimate goal!</p>
+                    
+                    <p><strong>4. Bounce Rate (under 2% is good)</strong></p>
+                    <p>Emails that couldn't be delivered. High bounces hurt your reputation.</p>
+                    
+                    <p><strong>5. Unsubscribe Rate (under 0.5% is good)</strong></p>
+                    <p>People who opted out. High unsubscribes mean content isn't relevant.</p>
+                </div>
+
+                <h3>Email vs Newsletter vs Marketing Automation</h3>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Type</th>
+                        <th>What It Is</th>
+                        <th>When to Use</th>
+                    </tr>
+                    <tr>
+                        <td><strong>One-Time Email</strong></td>
+                        <td>Single message sent once to your list</td>
+                        <td>Flash sales, announcements, one-off promotions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Newsletter</strong></td>
+                        <td>Regular updates sent on a schedule (weekly/monthly)</td>
+                        <td>Staying in touch, sharing news, building relationships</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marketing Automation</strong></td>
+                        <td>Triggered emails sent based on actions</td>
+                        <td>Welcome series, cart recovery, onboarding, nurturing</td>
+                    </tr>
+                </table>
+
+                <div class="tip">
+                    <strong>💡 Beginner Tip:</strong>
+                    <p>Start with a simple welcome email automation, then add a monthly newsletter. Master these before building complex workflows!</p>
+                </div>
+            </div>
+
+            <!-- QUICK START SECTION -->
+            <div id="quickstart" class="section">
+                <h2>⚡ Quick Start Guides</h2>
+                <p>Get up and running fast with these accelerated guides!</p>
+
+                <h3>Launch Your First Campaign in 30 Minutes</h3>
+                <span class="badge easy">BEGINNER-FRIENDLY</span>
+                <span class="badge">30 MIN</span>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <h4>Minutes 0-5: Sign Up for Email Platform</h4>
+                            <p>Choose one: Mailchimp (easiest for beginners), Brevo (free up to 300 emails/day), or MailerLite (generous free plan)</p>
+                            <ul>
+                                <li>Use your business email</li>
+                                <li>Skip paid plans for now - start free</li>
+                                <li>Verify your email address</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <h4>Minutes 5-10: Add Your First 10 Contacts</h4>
+                            <p>Import manually or via CSV</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <h4>Minutes 10-20: Create Your First Email</h4>
+                            <p>Use a pre-made template and customize it</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <h4>Minutes 20-25: Test & Preview</h4>
+                            <ul>
+                                <li>Send test to yourself</li>
+                                <li>Check on phone and computer</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <h4>Minutes 25-30: Send & Celebrate!</h4>
+                            <p>Hit send and monitor results! 🎉</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>5-Day Email Marketing Crash Course</h3>
+
+                <div class="day-plan">
+                    <div class="day-label">DAY 1</div>
+                    <h4>Foundation Day: Set Up Everything</h4>
+                    <ul>
+                        <li>Choose and sign up for email platform</li>
+                        <li>Verify your domain</li>
+                        <li>Create 2 basic templates</li>
+                        <li>Import first 20-50 contacts</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <div class="day-label">DAY 2</div>
+                    <h4>Content Day: Learn to Write Great Emails</h4>
+                    <ul>
+                        <li>Study 10 successful emails in your inbox</li>
+                        <li>Write 5 subject line variations</li>
+                        <li>Draft your first welcome email</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <div class="day-label">DAY 3</div>
+                    <h4>Automation Day: Set Up Your First Workflow</h4>
+                    <ul>
+                        <li>Create a simple 3-email welcome sequence</li>
+                        <li>Set up trigger and delays</li>
+                        <li>Test and activate</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <div class="day-label">DAY 4</div>
+                    <h4>Growth Day: Build Your List</h4>
+                    <ul>
+                        <li>Create a lead magnet</li>
+                        <li>Add signup form to website</li>
+                        <li>Share on social media</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <div class="day-label">DAY 5</div>
+                    <h4>Launch Day: Send Your First Campaign</h4>
+                    <ul>
+                        <li>Write your first newsletter</li>
+                        <li>Test thoroughly</li>
+                        <li>SEND IT!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BUDGET SECTION -->
+            <div id="budget" class="section">
+                <h2>💰 Email Automation on a Budget</h2>
+                <p>Start email marketing with $0-50/month! Here's exactly how.</p>
+
+                <h3>Free Email Tools Comparison</h3>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Platform</th>
+                        <th>Free Plan</th>
+                        <th>Best For</th>
+                        <th>Limitations</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Mailchimp</strong></td>
+                        <td>500 contacts, 1,000 sends/month</td>
+                        <td>Absolute beginners</td>
+                        <td>Limited automation, Mailchimp branding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brevo (Sendinblue)</strong></td>
+                        <td>Unlimited contacts, 300 emails/day</td>
+                        <td>Daily emailers</td>
+                        <td>Daily send limit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MailerLite</strong></td>
+                        <td>1,000 subscribers, 12,000 emails/month</td>
+                        <td>Growing businesses</td>
+                        <td>Basic features only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sender</strong></td>
+                        <td>2,500 subscribers, 15,000 emails/month</td>
+                        <td>High-volume free tier</td>
+                        <td>Newer platform</td>
+                    </tr>
+                </table>
+
+                <h3>Budget Breakdown: $0-50/Month</h3>
+
+                <div class="card">
+                    <h4>$0/Month Plan (Total Beginner)</h4>
+                    <ul>
+                        <li>✅ Email Platform: Free tier (Brevo/MailerLite) - $0</li>
+                        <li>✅ Design: Platform templates - $0</li>
+                        <li>✅ Images: Unsplash/Pexels - $0</li>
+                        <li>✅ Forms: Built-in platform forms - $0</li>
+                        <li>✅ Learning: YouTube tutorials - $0</li>
+                    </ul>
+                    <p><strong>Total: $0/month</strong></p>
+                    <p>Perfect for: Testing ideas, first 500-1,000 subscribers</p>
+                </div>
+
+                <div class="card">
+                    <h4>$20/Month Plan (Serious Starter)</h4>
+                    <ul>
+                        <li>Email Platform: Brevo Lite or MailerLite Growing - $15</li>
+                        <li>Stock photos: Canva Free - $0</li>
+                        <li>Lead magnet creation: Canva - $0</li>
+                        <li>Extra tools buffer - $5</li>
+                    </ul>
+                    <p><strong>Total: $20/month</strong></p>
+                    <p>Perfect for: 1,000-2,500 subscribers, basic automation</p>
+                </div>
+
+                <div class="card">
+                    <h4>$50/Month Plan (Growth Mode)</h4>
+                    <ul>
+                        <li>Email Platform: MailerLite/ActiveCampaign - $30</li>
+                        <li>Canva Pro: Professional designs - $13</li>
+                        <li>Landing page tool: Free tier - $0</li>
+                        <li>Analytics/testing - $7</li>
+                    </ul>
+                    <p><strong>Total: $50/month</strong></p>
+                    <p>Perfect for: 2,500-5,000 subscribers, advanced automation</p>
+                </div>
+
+                <h3>DIY Email Design (Free Resources)</h3>
+
+                <div class="resource-card">
+                    <span class="resource-type">DESIGN TOOL</span>
+                    <h4>Canva (Free)</h4>
+                    <p>Create email graphics, lead magnets, and social images. Free tier is surprisingly powerful!</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">STOCK PHOTOS</span>
+                    <h4>Unsplash & Pexels</h4>
+                    <p>Unlimited free high-quality photos. No attribution required!</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">ICONS</span>
+                    <h4>Font Awesome</h4>
+                    <p>Free icons for email buttons and visual elements.</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">COLORS</span>
+                    <h4>Coolors.co</h4>
+                    <p>Generate beautiful color palettes for your emails in seconds.</p>
+                </div>
+
+                <h3>Free Alternatives to Premium Tools</h3>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Need</th>
+                        <th>Premium Tool</th>
+                        <th>Free Alternative</th>
+                    </tr>
+                    <tr>
+                        <td>Landing Pages</td>
+                        <td>Unbounce ($90/mo)</td>
+                        <td>Carrd ($0-19/yr) or Google Sites (free)</td>
+                    </tr>
+                    <tr>
+                        <td>Forms</td>
+                        <td>Typeform ($35/mo)</td>
+                        <td>Google Forms (free) or Tally (free)</td>
+                    </tr>
+                    <tr>
+                        <td>Scheduler</td>
+                        <td>Buffer ($6/mo)</td>
+                        <td>Free tier works for most</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td>Mixpanel ($25/mo)</td>
+                        <td>Google Analytics (free)</td>
+                    </tr>
+                </table>
+
+                <div class="tip">
+                    <strong>💡 Budget Tip:</strong>
+                    <p>Don't upgrade until you've outgrown the free tier. Most beginners can run for 6-12 months on $0!</p>
+                </div>
+            </div>
+
+            <!-- MISTAKES SECTION -->
+            <div id="mistakes" class="section">
+                <h2>❌ Common Mistakes to Avoid</h2>
+                <p>Learn from others' failures! Here are the 10 biggest beginner mistakes.</p>
+
+                <h3>Top 10 Beginner Email Marketing Mistakes</h3>
+
+                <div class="mistake-card">
+                    <h4>Mistake #1: Buying Email Lists</h4>
+                    <p>Purchased lists destroy your sender reputation, violate laws (GDPR, CAN-SPAM), and have 0% engagement.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Build your list organically with lead magnets and signup forms. Quality over quantity!</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #2: No Email Authentication</h4>
+                    <p>Skipping SPF/DKIM setup sends 50%+ of emails to spam folders.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Set up SPF, DKIM, and DMARC on day one. Your platform has step-by-step guides.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #3: Terrible Subject Lines</h4>
+                    <p>Generic subjects like "Newsletter #5" or "Update" get ignored.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Use curiosity, urgency, or personalization. "Sarah, your cart expires in 1 hour" beats "Newsletter".</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #4: Sending Without Testing</h4>
+                    <p>Broken links, spelling errors, and formatting issues kill campaigns.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>ALWAYS send tests to yourself and 2-3 others before launching. Check on mobile!</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #5: No Mobile Optimization</h4>
+                    <p>70% open on mobile, but you designed for desktop only.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Use responsive templates. Single column, large fonts (14px+), big buttons (44px+).</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #6: Emailing Too Often</h4>
+                    <p>Daily emails = unsubscribes. You're annoying, not helpful.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Start with weekly emails. Survey audience to find their preferred frequency.</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #7: All Selling, No Value</h4>
+                    <p>Every email is "BUY NOW!" with no helpful content.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Follow 80/20 rule: 80% valuable content, 20% promotional. Build relationships first!</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #8: Ignoring Metrics</h4>
+                    <p>You send emails but never check if they work.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Check open rate, CTR, and unsubscribes after every campaign. Optimize what you measure!</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #9: No Segmentation</h4>
+                    <p>Sending same email to everyone = irrelevant content for most.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Create 3-5 segments: new subscribers, engaged users, customers, inactive. Tailor content!</p>
+                </div>
+
+                <div class="mistake-card">
+                    <h4>Mistake #10: Complicated First Automation</h4>
+                    <p>Building 20-email workflows with complex logic on day one = overwhelm and failure.</p>
+                </div>
+                <div class="solution-card">
+                    <h4>✓ Solution:</h4>
+                    <p>Start with simple 3-email welcome series. Master basics before advanced workflows!</p>
+                </div>
+
+                <div class="warning">
+                    <strong>⚠️ Avoid These Spam Trigger Mistakes:</strong>
+                    <ul>
+                        <li>ALL CAPS SUBJECT LINES!!!</li>
+                        <li>Excessive exclamation marks!!!</li>
+                        <li>Words: FREE, GUARANTEE, ACT NOW, LIMITED TIME</li>
+                        <li>No unsubscribe link</li>
+                        <li>Misleading subject lines</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EXAMPLES SECTION -->
+            <div id="examples" class="section">
+                <h2>📊 Real Examples & Case Studies</h2>
+                <p>Learn from real email examples - see what works and what doesn't!</p>
+
+                <h3>Good vs Bad Email Examples</h3>
+
+                <h4>Example 1: Welcome Email Subject Lines</h4>
+
+                <div class="example-box">
+                    <span class="example-label bad-example">❌ BAD</span>
+                    <p><strong>Subject:</strong> "Welcome"</p>
+                    <p><strong>Why it's bad:</strong> Too generic, no personality, doesn't stand out in inbox</p>
+                    <p><strong>Open Rate:</strong> 12%</p>
+                </div>
+
+                <div class="example-box">
+                    <span class="example-label good-example">✓ GOOD</span>
+                    <p><strong>Subject:</strong> "Welcome to FitLife, Sarah! Your free workout is ready 🎉"</p>
+                    <p><strong>Why it's good:</strong> Personalized, specific benefit, emoji adds visual interest</p>
+                    <p><strong>Open Rate:</strong> 38%</p>
+                </div>
+
+                <h4>Example 2: Email Body Content</h4>
+
+                <div class="example-box">
+                    <span class="example-label bad-example">❌ BAD</span>
+                    <div class="code-example">
+Subject: Update
+
+Hi,
+
+Here's our latest newsletter with updates 
+about our company and products. We have 
+many new things to share with you this 
+month including new features and updates...
+
+[5 more paragraphs of text]
+
+Click here to learn more
+                    </div>
+                    <p><strong>Problems:</strong> Vague subject, no clear benefit, too long, weak CTA, not mobile-friendly</p>
+                </div>
+
+                <div class="example-box">
+                    <span class="example-label good-example">✓ GOOD</span>
+                    <div class="code-example">
+Subject: 3 new features you asked for are here!
+
+Hi Sarah,
+
+You asked, we listened! Here are 3 new 
+features we just launched:
+
+✓ Dark mode (finally!)
+✓ Team collaboration
+✓ Mobile app updates
+
+[Try Them Now Button]
+
+Questions? Just reply to this email.
+
+- The FitLife Team
+                    </div>
+                    <p><strong>Why it works:</strong> Specific subject, scannable content, clear value, strong CTA, conversational tone</p>
+                </div>
+
+                <h3>Before & After Email Makeovers</h3>
+
+                <h4>Makeover #1: Product Launch Email</h4>
+
+                <div class="example-box">
+                    <span class="example-label bad-example">❌ BEFORE</span>
+                    <p><strong>Issues:</strong></p>
+                    <ul>
+                        <li>5 different CTAs competing</li>
+                        <li>Too much text (800 words)</li>
+                        <li>Small mobile fonts</li>
+                        <li>No clear value proposition</li>
+                    </ul>
+                    <p><strong>Results:</strong> 2.1% CTR</p>
+                </div>
+
+                <div class="example-box">
+                    <span class="example-label good-example">✓ AFTER</span>
+                    <p><strong>Changes Made:</strong></p>
+                    <ul>
+                        <li>ONE primary CTA button</li>
+                        <li>Reduced to 150 words</li>
+                        <li>16px mobile font</li>
+                        <li>Clear benefit in headline</li>
+                    </ul>
+                    <p><strong>Results:</strong> 8.7% CTR (314% improvement!)</p>
+                </div>
+
+                <h3>Small Business Success Stories</h3>
+
+                <div class="card">
+                    <h4>Case Study: Local Coffee Shop</h4>
+                    <p><strong>Business:</strong> Small coffee shop, 0 email marketing experience</p>
+                    <p><strong>Strategy:</strong></p>
+                    <ul>
+                        <li>Started with tablet signup at register</li>
+                        <li>Sent weekly "Coffee of the Week" emails</li>
+                        <li>Birthday email with free coffee</li>
+                        <li>Simple automation, no fancy design</li>
+                    </ul>
+                    <p><strong>Results After 6 Months:</strong></p>
+                    <ul>
+                        <li>1,200 subscribers built organically</li>
+                        <li>28% average open rate</li>
+                        <li>$4,500 additional monthly revenue</li>
+                        <li>15% of customers now repeat weekly</li>
+                    </ul>
+                    <p><strong>Cost:</strong> $15/month (MailerLite)</p>
+                    <p><strong>ROI:</strong> 30,000% 🎉</p>
+                </div>
+
+                <div class="card">
+                    <h4>Case Study: Freelance Designer</h4>
+                    <p><strong>Business:</strong> Solo graphic designer, inconsistent income</p>
+                    <p><strong>Strategy:</strong></p>
+                    <ul>
+                        <li>Monthly portfolio newsletter</li>
+                        <li>Design tips and free resources</li>
+                        <li>Personal stories about projects</li>
+                        <li>Focused on value, not selling</li>
+                    </ul>
+                    <p><strong>Results After 1 Year:</strong></p>
+                    <ul>
+                        <li>850 subscribers (mostly past clients and referrals)</li>
+                        <li>35% average open rate</li>
+                        <li>Booked solid 3 months in advance</li>
+                        <li>90% of new clients from email referrals</li>
+                    </ul>
+                    <p><strong>Cost:</strong> $0/month (free tier)</p>
+                    <p><strong>Key Lesson:</strong> Consistency beats perfection!</p>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Example Lesson:</strong>
+                    <p>Notice how the best emails are SIMPLE? Clear subject, brief content, one CTA. Copy this formula!</p>
+                </div>
+            </div>
+
+            <!-- RESOURCES SECTION -->
+            <div id="resources" class="section">
+                <h2>📚 Tools & Resources</h2>
+                <p>Everything you need to become an email marketing expert!</p>
+
+                <h3>Recommended Tools for Beginners</h3>
+
+                <div class="resource-card">
+                    <span class="resource-type">EMAIL PLATFORM</span>
+                    <h4>Brevo (Sendinblue)</h4>
+                    <p><strong>Best for:</strong> Beginners who send daily</p>
+                    <p><strong>Price:</strong> Free (300 emails/day)</p>
+                    <p><strong>Why we recommend:</strong> Unlimited contacts on free tier, good automation, SMS option</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">EMAIL PLATFORM</span>
+                    <h4>MailerLite</h4>
+                    <p><strong>Best for:</strong> Growing businesses</p>
+                    <p><strong>Price:</strong> Free up to 1,000 subscribers</p>
+                    <p><strong>Why we recommend:</strong> Beautiful templates, easy automation, great deliverability</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">DESIGN</span>
+                    <h4>Canva</h4>
+                    <p><strong>Best for:</strong> Email graphics and lead magnets</p>
+                    <p><strong>Price:</strong> Free (Pro $13/mo)</p>
+                    <p><strong>Why we recommend:</strong> Email templates, drag-and-drop, huge library</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">TESTING</span>
+                    <h4>Mail-Tester.com</h4>
+                    <p><strong>Best for:</strong> Checking spam score</p>
+                    <p><strong>Price:</strong> Free</p>
+                    <p><strong>Why we recommend:</strong> Instant spam score, identifies problems</p>
+                </div>
+
+                <h3>Free Learning Resources</h3>
+
+                <div class="resource-card">
+                    <span class="resource-type">COURSE</span>
+                    <h4>HubSpot Email Marketing Course</h4>
+                    <p>Free certification, 3 hours, covers all basics</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">BLOG</span>
+                    <h4>Really Good Emails</h4>
+                    <p>Thousands of real email examples for inspiration</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">YOUTUBE</span>
+                    <h4>Email Marketing by ActiveCampaign</h4>
+                    <p>Step-by-step tutorials, automation walkthroughs</p>
+                </div>
+
+                <div class="resource-card">
+                    <span class="resource-type">PODCAST</span>
+                    <h4>Marketing Against the Grain</h4>
+                    <p>Modern marketing tactics including email strategies</p>
+                </div>
+
+                <h3>Communities to Join</h3>
+
+                <div class="resource-card">
+                    <h4>r/EmailMarketing (Reddit)</h4>
+                    <p>Active community, beginner-friendly, great Q&A</p>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Email Geeks Slack</h4>
+                    <p>Professional email marketers, advanced discussions</p>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Litmus Community</h4>
+                    <p>Email testing and design forums</p>
+                </div>
+
+                <h3>Chrome Extensions for Email Marketers</h3>
+
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h4>Hunter.io</h4>
+                        <p>Find email addresses</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>Grammarly</h4>
+                        <p>Fix writing errors</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>ColorZilla</h4>
+                        <p>Pick colors from websites</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>WhatFont</h4>
+                        <p>Identify fonts</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>🎓 Next Steps in Your Learning Journey:</h4>
+                    <ol>
+                        <li>Complete HubSpot Email Marketing Course (3 hours)</li>
+                        <li>Join r/EmailMarketing and ask questions</li>
+                        <li>Subscribe to 10 great marketing emails for inspiration</li>
+                        <li>Practice by sending 1 email per week for 12 weeks</li>
+                        <li>Join Email Geeks Slack when you're ready for advanced tactics</li>
+                    </ol>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Learning Tip:</strong>
+                    <p>The best way to learn email marketing is by DOING. Read less, send more. You'll learn faster from real campaigns!</p>
+                </div>
+            </div>
+        </div>
+            <p>© 2026 Email Automation Guide | Stay ahead of the curve 🚀</p>
+            <p>Last Updated: January 2026</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            try {
+                // Hide all sections
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Remove active class from all tabs
+                const tabs = document.querySelectorAll('.tab');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                
+                // Show selected section
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+                
+                // Add active class to clicked tab - use event.target if available
+                if (typeof event !== 'undefined' && event.target) {
+                    event.target.classList.add('active');
+                }
+                
+                // Scroll to top of content
+                const contentDiv = document.querySelector('.content');
+                if (contentDiv) {
+                    contentDiv.scrollTop = 0;
+                }
+            } catch (error) {
+                console.log('Section switch error:', error);
+            }
+        }
+
+        // Checklist functionality
+        function toggleCheck(checkbox, listType) {
+            checkbox.classList.toggle('checked');
+            updateProgress(listType);
+        }
+
+        function updateProgress(listType) {
+            try {
+                const progressBar = document.getElementById(`${listType}-progress`);
+                const countSpan = document.getElementById(`${listType}-count`);
+                
+                if (!progressBar || !countSpan) return;
+
+                // Find the next checklist div after the progress bar
+                let currentElement = progressBar.parentElement;
+                let checklistDiv = null;
+                
+                // Look for the next .checklist element
+                while (currentElement && currentElement.nextElementSibling) {
+                    currentElement = currentElement.nextElementSibling;
+                    if (currentElement.classList && currentElement.classList.contains('checklist')) {
+                        checklistDiv = currentElement;
+                        break;
+                    }
+                }
+                
+                if (!checklistDiv) return;
+                
+                const checkboxes = checklistDiv.querySelectorAll('.checkbox');
+                let total = checkboxes.length;
+                let checked = 0;
+                
+                checkboxes.forEach(cb => {
+                    if (cb.classList.contains('checked')) checked++;
+                });
+
+                const percentage = total > 0 ? (checked / total) * 100 : 0;
+                progressBar.style.width = percentage + '%';
+                countSpan.textContent = checked;
+            } catch (error) {
+                console.log('Progress update error:', error);
+            }
+        }
+
+        // Accordion functionality
+        function toggleAccordion(header) {
+            try {
+                const content = header.nextElementSibling;
+                const symbol = header.querySelector('span:last-child');
+                
+                if (!content || !symbol) return;
+                
+                if (content.classList.contains('active')) {
+                    content.classList.remove('active');
+                    symbol.textContent = '+';
+                } else {
+                    // Close all other accordions
+                    document.querySelectorAll('.accordion-content.active').forEach(item => {
+                        item.classList.remove('active');
+                        const itemSymbol = item.previousElementSibling.querySelector('span:last-child');
+                        if (itemSymbol) itemSymbol.textContent = '+';
+                    });
+                    
+                    content.classList.add('active');
+                    symbol.textContent = '−';
+                }
+            } catch (error) {
+                console.log('Accordion error:', error);
+            }
+        }
+
+        // Copy template functionality
+        function copyTemplate(button) {
+            try {
+                const template = button.previousElementSibling;
+                if (!template) return;
+                
+                const text = template.textContent || template.innerText;
+                
+                // Try modern clipboard API first
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        // Visual feedback
+                        const originalText = button.textContent;
+                        button.textContent = '✓ Copied!';
+                        button.style.background = '#48bb78';
+                        
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.style.background = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.log('Clipboard API failed, trying fallback');
+                        fallbackCopy(text, button);
+                    });
+                } else {
+                    // Fallback for older browsers
+                    fallbackCopy(text, button);
+                }
+            } catch (error) {
+                console.log('Copy error:', error);
+                button.textContent = 'Copy failed';
+            }
+        }
+
+        function fallbackCopy(text, button) {
+            // Create temporary textarea
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            
+            // Select and copy
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile
+            
+            try {
+                document.execCommand('copy');
+                
+                // Visual feedback
+                const originalText = button.textContent;
+                button.textContent = '✓ Copied!';
+                button.style.background = '#48bb78';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            } catch (err) {
+                console.log('Fallback copy failed:', err);
+                button.textContent = 'Copy failed';
+            }
+            
+            document.body.removeChild(textarea);
+        }
+
+        // Initialize progress bars on load
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                ['setup', 'prelaunch', 'monthly', 'gdpr', 'design'].forEach(type => {
+                    updateProgress(type);
+                });
+            } catch (error) {
+                console.log('Initialization error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
